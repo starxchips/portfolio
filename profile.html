@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nida Apa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="icon" href="images/favicon/favicon.ico">
+</head>
+
+<body>
+
+    <header class="nav-bar">
+        <nav class="nav">
+    
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="index.html"><span class="star">*</span>N</a>
+            </div>
+    
+            <!-- DESKTOP NAV LINKS -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="uxwork.html">UX Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+    
+            <!-- HAMBURGER BUTTON (MOBILE) -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+        </nav>
+    </header>
+    
+    <!-- MOBILE SLIDE-OUT MENU -->
+    <div class="mobile-menu">
+        <button class="close-menu">×</button>
+    
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="uxwork.html">UX Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <main class="profile-page">
+
+        <section class="profile-section">
+
+            <div class="profile-container">
+        
+                <div class="profile-text">
+                    <h1 class="profile-title">Profile</h1>
+        
+                    <p class="profile-paragraph">I’m a UI/UX Designer & Web Developer with a passion for building clean, accessible, and user-centered digital experiences. With a background in Film, Television, and Digital Media, I bring a visual storytelling approach to design—thinking carefully about layout, color, and interaction to create intuitive and engaging interfaces. I also completed the Mobile App and Web Design Certificate at the College of San Mateo to strengthen my skills in design and development.</p>
+        
+                    <p class="profile-paragraph">I enjoy working with HTML, CSS, WordPress, and Wix, and I value collaboration, empathy, and thoughtful design. I care deeply about creating meaningful digital experiences and hope to join a team where I can continue to grow as a designer and contribute to impactful projects.</p>
+                </div>
+        
+                <div class="profile-image-wrapper">
+                    <img src="images/nida-apa.jpeg" alt="Nida Apa" class="profile-image">
+                </div>
+        
+            </div>
+        
+        </section>
+
+        <!-- EXPERTISE SECTION -->
+        <section class="expertise-section">
+
+            <h2>Expertise</h2>
+            <p>UI/UX • Wireframing • Prototyping • Front-End Web Design • Designing UI Kits</p>
+
+        </section>
+
+         <!-- TOOLS SECTION -->
+        <section class="tools-section">
+
+            <h2>Tools</h2>
+            <div class="tools-icons">
+                <img src="images/figma-logo.svg" alt="Figma design tool logo">
+                <img src="images/html-logo.svg" alt="HTML5 logo">
+                <img src="images/css-logo.svg" alt="CSS3 logo">
+                <img src="images/wordpress-logo.svg" alt="WordPress logo">
+                <img src="images/wix-logo.svg" alt="Wix website builder logo">
+                <img src="images/creative-cloud-logo.svg" alt="Adobe Creative Cloud logo">
+                <img src="images/canva-logo.svg" alt="Canva graphic design logo">
+            </div>
+        
+        </section>
+
+    </main>
+
+    <footer class="footer-bar"></footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

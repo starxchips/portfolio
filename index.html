@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nida Apa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="icon" href="images/favicon/favicon.ico">
+
+</head>
+<body>
+    <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-background">
+            <video autoplay muted loop playsinline>
+                <source src="background.mov" type="video/mp4">
+            </video>
+        </div>
+
+        <header class="nav-bar">
+            <nav class="nav">
+        
+                <!-- LOGO -->
+                <div class="nav-logo">
+                    <a href="index.html"><span class="star">*</span>N</a>
+                </div>
+        
+                <!-- DESKTOP NAV LINKS -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="uxwork.html">UX Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+        
+                <!-- HAMBURGER BUTTON (MOBILE) -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+            </nav>
+        </header>
+        
+        <!-- MOBILE SLIDE-OUT MENU -->
+        <div class="mobile-menu">
+            <button class="close-menu">×</button>
+        
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="uxwork.html">UX Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Nida Apa</h1>
+
+            <div class="hero-photo">
+                <img src="images/nida-apa.jpeg" alt="Nida Apa">
+            </div>
+
+            <p class="hero-subtitle">Designing for Everyone</p>
+
+            <div class="scroll-down">
+                <a href="#portfolio">
+                    <img src="images/scroll-down.svg" alt="Scroll Down">
+                </a>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+
+        <div class="intro-container">
+    
+            <p class="intro-text">
+                I’m a UI / UX designer based in the Silicon Valley.<br>
+                Currently building thoughtful experiences.<br>
+                I design clean, human-centered visuals that bring<br>
+                ideas to life.
+            </p>
+    
+            <a href="contact.html" class="intro-button">Contact Me</a>
+    
+        </div>
+
+    </section>
+    
+    <!-- GALLERY SECTION -->
+    <section id="portfolio" class="portfolio-section">
+
+        <div class="portfolio-intro">
+            <h2>I build layout systems that ship as beautiful,<br>ready-to-use templates.</h2>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="project"><img src="images/atelier-novo.png" alt="Fashion brand homepage showcasing couture photography and geometric collage layout."></div>
+            <div class="project"><img src="images/astrid.png" alt="Tea shop website template featuring matcha preparation photography and a minimal product section."></div>
+            <div class="project"><img src="images/vesper-and-cane.png" alt="Handmade furniture brand layout with curved line motifs and a clean modern product highlight."></div>
+            <div class="project"><img src="images/casa-di-sapori.png" alt="Cooking class website design with large food photography and centered call-to-action panel."></div>
+            <div class="project"><img src="images/the-long-take.png" alt="Independent cinema review site with editorial typography and film still imagery."></div>
+            <div class="project"><img src="images/frame-and-fader.png" alt="Media production studio template featuring service sections, minimal navigation, and rounded imagery."></div>
+        </div>
+
+    </section>
+
+    <div id="image-modal" class="modal">
+        <div class="modal-wrapper">
+    
+            <span class="modal-close">×</span>
+    
+            <div class="modal-box">
+                <img class="modal-content" id="modal-img">
+            </div>
+    
+        </div>
+    </div>
+
+    </main>
+
+    <footer class="footer-bar"></footer>
+
+    <!-- SCRIPT SECTION -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        const modal = document.getElementById("image-modal");
+        const modalImg = document.getElementById("modal-img");
+        const closeBtn = document.querySelector(".modal-close");
+
+        document.querySelectorAll(".portfolio-grid img").forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        modal.addEventListener("click", e => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>
