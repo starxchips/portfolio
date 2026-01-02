@@ -135,7 +135,7 @@ body {
     width: 100%;
     overflow: hidden;
     padding-top: 8rem;
-    padding-bottom: 5rem; 
+    padding-bottom: 4rem; 
 }
 
 .hero-background {
@@ -347,14 +347,13 @@ body {
 .intro-section {
     width: 100%;
     background: white;
-    padding-top: 6rem;
-    padding-bottom: 8rem;
+    padding: 6rem 0;
     display: flex;
     justify-content: center;
 }
 
 .intro-container {
-    max-width: 1000px;
+    max-width: 900px;
     text-align: center;
 }
 
@@ -377,7 +376,7 @@ body {
 }
 
 .portfolio-section {
-    padding: 8rem 2rem;
+    padding: 6rem 2rem;
 }
 
 .portfolio-intro {
@@ -829,7 +828,7 @@ body {
 
 /* WORK SECTION */
 .work-section {
-    padding: 10rem 4vw;
+    padding: 6rem 4vw;
     background-color: #F5F5F5;
 }
 
@@ -1068,23 +1067,33 @@ form {
     }
     
     .intro-section {
-        padding: 4rem 0 5rem 0; 
+        padding: 3rem 0; 
         display: block;
         justify-content: unset;
         align-items: unset;
     }
 
     .intro-container {
-        max-width: 100%;
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         padding: 0 1.5rem;   
         text-align: center;
         box-sizing: border-box;
     }
-
+    
     .intro-text {
         font-size: clamp(1.2rem, 5vw, 2rem);
         line-height: 1.35;
+    }
+
+    .work-section {
+        padding: 6rem 4vw;
+        background-color: #F5F5F5; 
+    }
+
+    .hero-subtitle {
+        width: 80%;
+        margin: 0 auto;
     }
 
     .ux-container-block {
