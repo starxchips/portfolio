@@ -410,6 +410,10 @@ body {
     display: block;
 }
 
+.photography-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 /* MODAL POP UP */
 .modal {
     display: none;
@@ -469,10 +473,10 @@ body {
 
 .profile-title {
     font-family: var(--font-serif);
-    font-size: var(--fs-heading-lg);
+    font-size: calc(var(--fs-heading-lg) * 0.75);
     font-weight: var(--fw-regular);
     line-height: var(--lh-heading);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .profile-paragraph {
@@ -616,9 +620,9 @@ body {
     transition: var(--btn-transition);
 }
 
-.hero-button {
+/* .hero-button {
     margin-top: 1.5rem
-}
+} */
 
 .hero-button:hover {
     background: black;
@@ -1250,3 +1254,8 @@ form {
     }
 }
 
+@media (max-width: 768px) {
+    .photography-grid {
+        grid-template-columns: 1fr;
+    }
+}
