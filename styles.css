@@ -196,11 +196,12 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 5vw;
+    gap: clamp(1.25rem, 2vw, 2.25rem);
     list-style: none;
 }
 
 .nav-links a {
+    position: relative;
     font-family: inherit;
     font-size: var(--fs-body);
     font-weight: var(--fw-light);
@@ -208,8 +209,19 @@ body {
     color: black;
 }
 
-.nav-links a:hover {
-    opacity: 0.9;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: black;
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .hamburger {
@@ -370,6 +382,49 @@ body {
     color: white;
 }
 
+/* CLOSING CTA SECTION */
+.cta-section {
+    background: #303030;
+    color: white;
+    padding: 8rem 4vw;
+    text-align: center;
+}
+
+.cta-section .intro-text {
+    color: white;
+}
+
+.cta-subtext {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-body);
+    max-width: 52ch;
+    margin: 0 auto 2.5rem;
+    color: white;
+    opacity: 0.85;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    font-family: inherit;
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    letter-spacing: var(--btn-letter-spacing);
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: var(--btn-radius);
+    text-decoration: none;
+    transition: var(--btn-transition);
+}
+
+.cta-button:hover {
+    background: white;
+    color: black;
+}
+
 /* PORTFOLIO SECTION */
 #portfolio {
     scroll-margin-top: 50px;
@@ -414,6 +469,30 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* GALLERY EMPTY STATE — reserved slot for assets not yet uploaded */
+.gallery-placeholder {
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: 1.5px dashed #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #999;
+    font-family: "Inter", sans-serif;
+    font-size: var(--fs-body-sm);
+    text-align: center;
+    padding: 1rem;
+}
+
+.gallery-placeholder svg {
+    width: 28px;
+    height: 28px;
+    opacity: 0.6;
+}
+
 /* MODAL POP UP */
 .modal {
     display: none;
@@ -432,14 +511,19 @@ body {
 }
 
 .modal-box {
-    max-width: 70vw;
-    max-height: auto;
-    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    width: 100%;
-    height: 100%;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
     object-fit: contain;
 }
 
@@ -846,18 +930,24 @@ body {
     text-align: center;
 }
 
+.work-grid.highlight-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+}
+
 .work-card {
     display: flex;
     flex-direction: column;
-    padding: 1.25rem 1.25rem;
-    border: 0.5px solid #888;
+    padding: 2rem 1.75rem;
+    background: #fff;
+    border: 0.5px solid #d8d8d8;
     border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.045);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .work-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .work-card .hero-button {
@@ -865,23 +955,36 @@ body {
 }
 
 .work-card .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.work-card .hero-paragraph { 
+.work-card .hero-paragraph {
     font-family: "Inter", sans-serif;
-    font-size: clamp(0.90rem, 1.2vw, 0.90rem);
+    font-size: var(--fs-body-sm);
     font-weight: 300;
     line-height: 1.6;
     margin-bottom: 1.90rem;
     max-width: 100%;
-    text-align: justify;
+    text-align: left;
 }
 
-.work-card .hero-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+/* CARD ICON BADGE — shared across Marketing Highlights & E-Commerce cards */
+.card-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F0F0F0;
+    border-radius: 50%;
+    color: #000;
+}
+
+.card-icon svg {
+    width: 26px;
+    height: 26px;
 }
 
 .work-image {
